@@ -5,6 +5,7 @@ djangorestframework
 djangorestframework-simplejwt
 drf-spectacular
 django-filter
+django-cors-headers
 
 pytest
 pytest-django
