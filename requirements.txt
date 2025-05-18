@@ -1,0 +1,10 @@
+django<5.3
+environs
+psycopg
+djangorestframework
+djangorestframework-simplejwt
+drf-spectacular
+django-filter
+
+pytest
+pytest-django

@@ -1,0 +1,30 @@
+version: '3.7'
+services:
+  db:
+    container_name: library_db
+    image: postgres:17
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+  web:
+    container_name: library_web
+    env_file:
+      - .env
+    restart: always
+    ports:
+      - '8000:8000'
+    build:
+      context: .
+      dockerfile: Dockerfile.local
+    stdin_open: true
+    # stty: true
+    volumes:
+     - .:/app
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:
+
